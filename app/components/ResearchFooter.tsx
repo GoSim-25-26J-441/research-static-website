@@ -6,7 +6,7 @@ const year = new Date().getFullYear();
 
 export function ResearchFooter() {
   return (
-    <footer className="bg-[#111827] text-white">
+    <footer className="relative z-10 bg-[#111827] text-white">
       <div className="border-b-2 border-white">
         <div className="mx-auto flex max-w-7xl items-center justify-center gap-4 px-4 py-4 sm:px-6 md:justify-end lg:px-8">
           <p className="text-center text-sm font-medium text-white/95">

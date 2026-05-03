@@ -1,48 +1,74 @@
+import { Link } from "react-router";
+
+import { OpenButton } from "~/components/OpenButton";
+import { PageHero } from "~/components/PageHero";
+import { driveDocUrl, type DocumentDriveKey } from "~/lib/driveLinks";
+
 import type { Route } from "./+types/documents";
 
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "Research Project Website | Documents" },
-    { name: "description", content: "Project documentation links." },
+    {
+      name: "description",
+      content:
+        "Project charter, proposal, checklists, and final report with status and links.",
+    },
   ];
 }
 
-type Row = { name: string; status: string; href?: string; pending?: boolean };
-
-const ROWS: Row[] = [
-  {
-    name: "Project Charter",
-    status: "Available",
-    href: "/assets/docs/project-charter.pdf",
-  },
-  {
-    name: "Proposal Document",
-    status: "Available",
-    href: "/assets/docs/proposal.pdf",
-  },
+const DOC_DEFS: {
+  name: string;
+  key: DocumentDriveKey;
+  footnote: string;
+}[] = [
+  { name: "Project Charter", key: "projectCharter", footnote: "Available" },
+  { name: "Proposal Document", key: "proposal", footnote: "Available" },
   {
     name: "Checklist Documents",
-    status: "Pending / Add files",
-    pending: true,
+    key: "checklists",
+    footnote: "Pending / Add files",
   },
   {
     name: "Final Report (Main + Individual)",
-    status: "Pending / Add files",
-    pending: true,
+    key: "finalReport",
+    footnote: "Pending / Add files",
   },
 ];
 
 export default function DocumentsPage() {
+  const rows = DOC_DEFS.map((d) => {
+    const href = driveDocUrl(d.key);
+    return { ...d, href };
+  });
+
   return (
-    <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-5xl px-4 pb-16 sm:px-6 lg:px-8">
+      <PageHero
+        eyebrow="Evidence & write-ups"
+        title="Project documents"
+        lead={
+          <p>
+            Keep this page as a single index of project documents: status and an
+            external link where each file is published. Update rows as charters,
+            proposals, and reports are finalized.
+          </p>
+        }
+        footer={
+          <Link
+            to="/presentations"
+            className="inline-flex rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/10"
+          >
+            View presentations
+          </Link>
+        }
+      />
+
       <section className="rounded-2xl border border-white/10 bg-zinc-900/50 p-6 shadow-xl backdrop-blur-sm sm:p-8">
-        <h1 className="text-xl font-semibold text-white">Project Documents</h1>
+        <h2 className="text-lg font-semibold text-white">Document register</h2>
         <p className="mt-2 text-sm text-zinc-500">
-          Keep only links here. Add new files to{" "}
-          <code className="rounded bg-zinc-800 px-1.5 py-0.5 text-zinc-200">
-            public/assets/docs/
-          </code>{" "}
-          and update this page.
+          Use <span className="text-zinc-400">Open</span> to view the file in a new
+          tab.
         </p>
         <div className="mt-6 overflow-x-auto rounded-xl border border-white/10">
           <table className="w-full min-w-[520px] border-collapse text-left text-sm">
@@ -50,29 +76,18 @@ export default function DocumentsPage() {
               <tr className="border-b border-white/10 bg-zinc-950/60">
                 <th className="px-4 py-3 font-semibold text-zinc-200">Document</th>
                 <th className="px-4 py-3 font-semibold text-zinc-200">Status</th>
-                <th className="px-4 py-3 font-semibold text-zinc-200">Link</th>
+                <th className="px-4 py-3 font-semibold text-zinc-200">Open</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-white/10 text-zinc-300">
-              {ROWS.map((r) => (
-                <tr key={r.name} className="bg-zinc-900/30">
-                  <td className="px-4 py-3">{r.name}</td>
-                  <td className="px-4 py-3">{r.status}</td>
-                  <td className="px-4 py-3">
-                    {r.href ? (
-                      <a
-                        href={r.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="font-medium text-sky-400 hover:underline"
-                      >
-                        Open
-                      </a>
-                    ) : (
-                      <span className="text-zinc-500">
-                        {r.pending ? "Update link after upload" : "—"}
-                      </span>
-                    )}
+              {rows.map((r) => (
+                <tr key={r.key} className="bg-zinc-900/30">
+                  <td className="px-4 py-3 font-medium text-zinc-100">{r.name}</td>
+                  <td className="px-4 py-3 align-middle">
+                    <p className="max-w-56 text-sm text-zinc-400">{r.footnote}</p>
+                  </td>
+                  <td className="px-4 py-3 align-middle">
+                    <OpenButton href={r.href} />
                   </td>
                 </tr>
               ))}
@@ -80,8 +95,34 @@ export default function DocumentsPage() {
           </table>
         </div>
       </section>
-      <p className="mt-8 text-center text-xs text-zinc-500">
-        Files should stay within repository size constraints.
+
+      <div className="mt-10 grid gap-6 md:grid-cols-2">
+        <section className="rounded-2xl border border-white/10 bg-zinc-900/40 p-6">
+          <h3 className="text-sm font-semibold text-white">Naming convention</h3>
+          <p className="mt-2 text-xs leading-relaxed text-zinc-400">
+            Use clear, versioned filenames (e.g.{" "}
+            <code className="text-zinc-300">proposal-v2.pdf</code>) and avoid spaces
+            in URLs so links stay stable wherever you host them.
+          </p>
+        </section>
+        <section className="rounded-2xl border border-white/10 bg-zinc-900/40 p-6">
+          <h3 className="text-sm font-semibold text-white">Keeping the register current</h3>
+          <ol className="mt-2 list-decimal space-y-1.5 pl-4 text-xs leading-relaxed text-zinc-400">
+            <li>Publish the file wherever your team stores canonical copies.</li>
+            <li>Update the link for that row when the file is ready for assessors.</li>
+            <li>Refresh status text so the table always matches reality.</li>
+          </ol>
+        </section>
+      </div>
+
+      <p className="mt-10 text-center text-sm text-zinc-500">
+        <Link to="/milestones" className="text-emerald-400 hover:underline">
+          Milestones
+        </Link>
+        {" · "}
+        <Link to="/" className="text-emerald-400 hover:underline">
+          Home
+        </Link>
       </p>
     </div>
   );
