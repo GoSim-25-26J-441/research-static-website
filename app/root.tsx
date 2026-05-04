@@ -9,8 +9,11 @@ import {
 
 import type { Route } from "./+types/root";
 import "./app.css";
+import { SITE_LOGO_SRC } from "./lib/siteNav";
 
 export const links: Route.LinksFunction = () => [
+  { rel: "icon", type: "image/png", href: SITE_LOGO_SRC },
+  { rel: "apple-touch-icon", href: SITE_LOGO_SRC },
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   {
     rel: "preconnect",

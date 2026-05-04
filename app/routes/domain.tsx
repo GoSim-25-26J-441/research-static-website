@@ -100,11 +100,12 @@ export default function DomainPage() {
           title="Technologies Used"
         >
           <ul className="list-disc space-y-1.5 pl-5">
-            <li>LLM-assisted design input interpretation</li>
-            <li>Graph-based architecture modeling and rule-based analysis</li>
-            <li>Realtime/discrete-event simulation using YAML scenarios</li>
-            <li>Interactive visualization and centralized backend orchestration</li>
-            <li>Multi-cloud pricing analysis (AWS and Azure)</li>
+            <li>TypeScript, Next.js, and Tailwind CSS for the research web interface</li>
+            <li>LLM-assisted design input interpretation            </li>
+            <li>Graph-based architecture modeling with rule-based anti-pattern detection</li>
+            <li>Scenario-driven discrete-event simulation using YAML configurations</li>
+            <li>REST-based backend orchestration with persistent run/result management</li>
+            <li>Multi-cloud cost comparison workflows for AWS and Azure</li>
 
           </ul>
         </Card>

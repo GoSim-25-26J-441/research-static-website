@@ -48,9 +48,9 @@ const EXPLORE_LINKS = [
 
 const GLANCE = [
   { label: "Institution", value: "SLIIT — final-year research" },
-  { label: "Focus", value: "Architecture, tooling & evaluation" },
+  { label: "Focus", value: "Pre-deployment microservice performance prediction" },
   { label: "Site role", value: "Single hub for assessors & visitors" },
-  { label: "Status", value: "Active — content updated each sprint" },
+  { label: "Status", value: "In progress — iterative validation each sprint" },
 ] as const;
 
 const DELIVERABLES = [
@@ -167,9 +167,13 @@ export default function Home() {
           <div className="space-y-4 text-sm leading-relaxed text-zinc-300">
             <p>
               <strong className="text-zinc-100">Problem context.</strong>{" "}
-              Summarize the industry or academic setting, why existing approaches
-              fall short, and what users or systems stand to gain from your
-              solution. Tie this to the gap you document under{" "}
+              Modern microservice systems are often deployed without reliable
+              pre-deployment evidence about latency, throughput, resource usage,
+              and cost behavior. Existing evaluations typically happen late,
+              after implementation and environment setup, making redesigns costly
+              and time-consuming. This research targets that gap by bringing
+              prediction and architecture feedback to the design phase; detailed
+              motivation and literature grounding are documented under{" "}
               <Link to="/domain" className="text-emerald-400 hover:underline">
                 Domain
               </Link>
@@ -177,14 +181,20 @@ export default function Home() {
             </p>
             <p>
               <strong className="text-zinc-100">Proposed contribution.</strong>{" "}
-              State the artifact you will deliver (platform, framework, study,
-              dataset, etc.), the evaluation you will run, and how success will
-              be measured against your objectives.
+              We are building a pre-deployment decision-support framework that
+              transforms architecture and workload inputs into simulation-ready
+              models, highlights performance anti-patterns, and compares cloud
+              hosting cost scenarios before coding begins. Evaluation focuses on
+              prediction fidelity, decision quality, and practical usefulness to
+              developers and architects.
             </p>
             <p>
               <strong className="text-zinc-100">Ethics &amp; feasibility.</strong>{" "}
-              Briefly note data handling, participant involvement (if any), and
-              major risks or dependencies (hardware, licenses, APIs).
+              The study avoids sensitive personal data and uses controlled
+              benchmark inputs, synthetic traces, and documented assumptions.
+              Feasibility risks are managed through incremental milestones,
+              reproducible experiment scripts, and fallback strategies for
+              tooling or cloud API constraints.
             </p>
           </div>
         </CardShell>
@@ -223,58 +233,10 @@ export default function Home() {
                   →
                 </span>
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-zinc-400">{item.body}</p>
             </Link>
           ))}
         </div>
       </section>
-
-      {/* Deliverables + milestone teaser */}
-      <div className="mt-12 grid gap-6 lg:grid-cols-2">
-        <CardShell className="p-6 sm:p-7">
-          <h2 className="text-lg font-semibold text-white">Expected deliverables</h2>
-          <p className="mt-2 text-sm text-zinc-500">
-            Check off internally; public links live under Documents &amp;
-            Presentations.
-          </p>
-          <ul className="mt-4 space-y-2.5 text-sm text-zinc-300">
-            {DELIVERABLES.map((d) => (
-              <li key={d} className="flex gap-2">
-                <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-emerald-400/85" />
-                <span>{d}</span>
-              </li>
-            ))}
-          </ul>
-        </CardShell>
-        <CardShell className="p-6 sm:p-7">
-          <h2 className="text-lg font-semibold text-white">Assessment rhythm</h2>
-          <p className="mt-2 text-sm text-zinc-500">
-            Dates and weightings are maintained on the milestones page.
-          </p>
-          <ol className="mt-4 space-y-3 text-sm text-zinc-300">
-            <li className="flex gap-3">
-              <span className="font-mono text-xs text-zinc-500">01</span>
-              <span>Project proposal — scope, risks, and plan sign-off.</span>
-            </li>
-            <li className="flex gap-3">
-              <span className="font-mono text-xs text-zinc-500">02</span>
-              <span>Progress presentations — demos, metrics, and pivots.</span>
-            </li>
-            <li className="flex gap-3">
-              <span className="font-mono text-xs text-zinc-500">03</span>
-              <span>Final assessment &amp; viva — outcomes and Q&amp;A.</span>
-            </li>
-          </ol>
-          <div className="mt-6">
-            <Link
-              to="/milestones"
-              className="text-sm font-semibold text-emerald-400 hover:underline"
-            >
-              Open full milestone breakdown
-            </Link>
-          </div>
-        </CardShell>
-      </div>
     </div>
   );
 }
