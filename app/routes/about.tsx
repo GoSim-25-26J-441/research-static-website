@@ -109,7 +109,7 @@ export default function AboutPage() {
         <h2 className="text-lg font-semibold text-white">Achievements / highlights</h2>
 
         <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-zinc-300">
-          <li>Applicant for the SLCCOM and MARON Conferences</li>
+          <li>Applicant for the Slasscom and MERcon Conferences</li>
         </ul>
       </section>
 
