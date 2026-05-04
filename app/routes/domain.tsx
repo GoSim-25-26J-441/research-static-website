@@ -5,7 +5,7 @@ import { PageHero } from "~/components/PageHero";
 
 import type { Route } from "./+types/domain";
 
-export function meta({}: Route.MetaArgs) {
+export function meta({ }: Route.MetaArgs) {
   return [
     { title: "Research Project Website | Domain" },
     {
@@ -50,9 +50,7 @@ export default function DomainPage() {
               Keep language concrete—assessors should see traceability from gap →
               objectives → methodology.
             </p>
-            <p className="mt-3 text-zinc-500">
-              Domain details can be refined as research progresses.
-            </p>
+
           </>
         }
         footer={
@@ -76,50 +74,48 @@ export default function DomainPage() {
       <div className="grid gap-6 md:grid-cols-2">
         <Card
           title="Literature Survey"
-          hint="Cite primary studies; group themes; call out conflicting results."
         >
           <p>
-            Summarize the key findings from existing studies relevant to your
-            project.
+            Recent studies show strong progress in separate areas of microservice engineering: AI-assisted architecture design, anti-pattern detection, simulation-based performance prediction, and cloud cost-aware deployment planning. Prior work confirms that each area can improve design quality, but most solutions focus on one concern at a time rather than supporting a continuous pre-deployment decision process.
           </p>
         </Card>
         <Card
           title="Research Gap"
-          hint="One paragraph on what is missing today—not only 'no tool exists'."
         >
           <p>
-            Explain what current solutions miss and why your work is needed.
+            Existing approaches remain fragmented and provide limited support for converting mixed early-stage inputs (chat, diagrams, and partial specifications) into structured architecture models that can be validated, simulated, and evaluated for cost in one workflow. There is a clear need for a unified framework that links these stages with traceability and iterative refinement.
           </p>
         </Card>
         <Card
           title="Research Problem"
-          hint="Prefer a single crisp problem statement you can measure against."
         >
-          <p>Define the specific problem your team is solving.</p>
+          <p>Microservice design decisions are often made when requirements are incomplete and deployment assumptions are uncertain. This makes it difficult to identify structural flaws, predict runtime behavior, and estimate deployment cost before implementation, increasing the risk of expensive redesigns in later development stages.</p>
         </Card>
-        <Card title="Research Objectives" hint="SMART-style bullets work well here.">
+        <Card title="Research Objectives">
           <ul className="list-disc space-y-1.5 pl-5">
-            <li>Objective 1</li>
-            <li>Objective 2</li>
-            <li>Objective 3</li>
+            <li>Transform early multimodal design inputs into structured architecture representations.</li>
+            <li>Detect and explain microservice anti-patterns with actionable refinement suggestions.</li>
+            <li>Predict runtime performance through scenario-based simulation before deployment.</li>
+            <li>Analyze multi-cloud pricing and select the most cost-effective cloud platform for deployment with pricing details.</li>
           </ul>
         </Card>
         <Card
           title="Methodology"
-          hint="Include data sources, experiments, baselines, and validation steps."
+
         >
           <p>
-            Provide your approach, data handling method, and evaluation process.
-          </p>
+            The study follows a modular pipeline with four connected stages: Design Input Processing, Architecture Model Generation with Anti-Pattern Detection, Realtime Performance Simulation, and Cost Analysis with Suggestions. Outputs of each stage are reused by the next stage, while versioning and persistence support iterative re-analysis and evidence-based design improvement.          </p>
         </Card>
         <Card
           title="Technologies Used"
-          hint="Map each stack choice to a part of your architecture or pipeline."
         >
           <ul className="list-disc space-y-1.5 pl-5">
-            <li>Frontend stack</li>
-            <li>Tools and frameworks</li>
-            <li>Supporting platforms</li>
+            <li>LLM-assisted design input interpretation</li>
+            <li>Graph-based architecture modeling and rule-based analysis</li>
+            <li>Realtime/discrete-event simulation using YAML scenarios</li>
+            <li>Interactive visualization and centralized backend orchestration</li>
+            <li>Multi-cloud pricing analysis (AWS and Azure)</li>
+
           </ul>
         </Card>
       </div>

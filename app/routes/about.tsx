@@ -4,7 +4,7 @@ import { PageHero } from "~/components/PageHero";
 
 import type { Route } from "./+types/about";
 
-export function meta({}: Route.MetaArgs) {
+export function meta({ }: Route.MetaArgs) {
   return [
     { title: "Research Project Website | About Us" },
     {
@@ -62,10 +62,7 @@ export default function AboutPage() {
               </code>{" "}
               using the same filenames as the original HTML site.
             </p>
-            <p className="mt-3 text-zinc-500">
-              Update member details once finalized—roles below are placeholders
-              you can edit in code.
-            </p>
+
           </>
         }
         footer={

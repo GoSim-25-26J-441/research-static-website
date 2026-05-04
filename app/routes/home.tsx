@@ -2,7 +2,7 @@ import { Link } from "react-router";
 
 import type { Route } from "./+types/home";
 
-export function meta({}: Route.MetaArgs) {
+export function meta({ }: Route.MetaArgs) {
   return [
     { title: "Research Project Website | Home" },
     {
@@ -89,13 +89,12 @@ export default function Home() {
           Welcome
         </h1>
         <p className="mt-5 max-w-3xl text-sm leading-relaxed text-zinc-200 sm:text-base">
-          This website presents our research project with clear sections for
-          domain knowledge, project milestones, documents, presentations, and
-          team details.
+          This website presents our final-year research project, "Pre-Deployment Decision Support Framework For Microservice Performance Prediction", including domain context, milestones, documents, presentations, and team details.
+          <br />
+          <br />
+          The project provides a pre-deployment workflow to process design inputs, generate architecture models, detect anti-patterns, simulate runtime behavior, and compare multi-cloud costs before implementation.
         </p>
-        <p className="mt-4 max-w-3xl text-sm leading-relaxed text-zinc-500">
-          Update this section with your actual project abstract and key value.
-        </p>
+
         <div className="mt-8 flex flex-wrap gap-3">
           <Link
             to="/domain"
@@ -120,9 +119,9 @@ export default function Home() {
             High-level framing you can refine as the research matures.
           </p>
           <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-relaxed text-zinc-300">
-            <li>Research focus and context</li>
-            <li>Core objectives and expected outcomes</li>
-            <li>Technologies and implementation strategy</li>
+            <li>Design-time prediction of latency, throughput, and resource usage</li>
+            <li>Early anti-pattern detection and architecture refinement support</li>
+            <li>Integrated cloud cost analysis across major cloud providers</li>
           </ul>
         </article>
         <article className="rounded-2xl border border-white/10 bg-zinc-900/50 p-6 shadow-lg backdrop-blur-sm md:p-7">
@@ -167,10 +166,7 @@ export default function Home() {
       {/* Abstract & scope — editable body copy */}
       <section className="mt-12">
         <h2 className="text-xl font-semibold text-white">Abstract &amp; scope</h2>
-        <p className="mt-2 text-sm text-zinc-500">
-          Replace the paragraphs below with your final abstract, novelty, and
-          scope boundaries.
-        </p>
+
         <CardShell className="mt-5 p-6 sm:p-8">
           <div className="space-y-4 text-sm leading-relaxed text-zinc-300">
             <p>
@@ -201,9 +197,7 @@ export default function Home() {
       {/* At a glance */}
       <section className="mt-12">
         <h2 className="text-xl font-semibold text-white">Project at a glance</h2>
-        <p className="mt-2 text-sm text-zinc-500">
-          Snapshot row for visitors — swap values anytime.
-        </p>
+
         <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {GLANCE.map((row) => (
             <CardShell key={row.label} className="p-4">
@@ -219,10 +213,7 @@ export default function Home() {
       {/* Explore grid */}
       <section className="mt-12">
         <h2 className="text-xl font-semibold text-white">Explore this site</h2>
-        <p className="mt-2 max-w-2xl text-sm text-zinc-500">
-          Each area mirrors the original HTML site structure, now in one React
-          experience with shared navigation and visuals.
-        </p>
+
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {EXPLORE_LINKS.map((item) => (
             <Link

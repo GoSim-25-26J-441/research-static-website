@@ -4,7 +4,7 @@ import { PageHero } from "~/components/PageHero";
 
 import type { Route } from "./+types/contact";
 
-export function meta({}: Route.MetaArgs) {
+export function meta({ }: Route.MetaArgs) {
   return [
     { title: "Research Project Website | Contact Us" },
     {
@@ -32,10 +32,7 @@ export default function ContactPage() {
               Prefer email for anything that needs a paper trail; include context
               so the right member can reply.
             </p>
-            <p className="mt-3 text-zinc-500">
-              Replace placeholders with official team contacts when they are
-              finalized.
-            </p>
+
           </>
         }
         footer={
