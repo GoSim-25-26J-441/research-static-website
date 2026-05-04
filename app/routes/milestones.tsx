@@ -4,7 +4,7 @@ import { PageHero } from "~/components/PageHero";
 
 import type { Route } from "./+types/milestones";
 
-export function meta({}: Route.MetaArgs) {
+export function meta({ }: Route.MetaArgs) {
   return [
     { title: "Research Project Website | Milestones" },
     {
@@ -28,31 +28,31 @@ const MILESTONES: Milestone[] = [
     title: "Project Proposal",
     defaultOpen: true,
     date: "2025-08-15",
-    marks: "XX%",
+    marks: "6%",
     description: "Initial concept and scope presentation.",
   },
   {
     title: "Progress Presentation 1",
     date: "2026-01-06",
-    marks: "XX%",
+    marks: "15%",
     description: "Early progress review and feedback.",
   },
   {
     title: "Progress Presentation 2",
     date: "2026-03-10",
-    marks: "XX%",
+    marks: "18%",
     description: "Mid-to-late stage implementation update.",
   },
   {
     title: "Final Assessment",
-    date: "2026-xx-xx",
-    marks: "XX%",
+    date: "2026-05-05",
+    marks: "10%",
     description: "Final product demonstration and evaluation.",
   },
   {
     title: "Viva",
     date: "2026-05-05",
-    marks: "XX%",
+    marks: "10%",
     description: "Individual and group understanding assessment.",
   },
 ];

@@ -6,7 +6,7 @@ import { driveDocUrl, type DocumentDriveKey } from "~/lib/driveLinks";
 
 import type { Route } from "./+types/documents";
 
-export function meta({}: Route.MetaArgs) {
+export function meta({ }: Route.MetaArgs) {
   return [
     { title: "Research Project Website | Documents" },
     {
@@ -22,19 +22,19 @@ const DOC_DEFS: {
   key: DocumentDriveKey;
   footnote: string;
 }[] = [
-  { name: "Project Charter", key: "projectCharter", footnote: "Available" },
-  { name: "Proposal Document", key: "proposal", footnote: "Available" },
-  {
-    name: "Checklist Documents",
-    key: "checklists",
-    footnote: "Pending / Add files",
-  },
-  {
-    name: "Final Report (Main + Individual)",
-    key: "finalReport",
-    footnote: "Pending / Add files",
-  },
-];
+    { name: "Project Charter", key: "projectCharter", footnote: "Available" },
+    { name: "Proposal Document", key: "proposal", footnote: "Available" },
+    {
+      name: "Checklist Documents",
+      key: "checklists",
+      footnote: "Available",
+    },
+    {
+      name: "Final Report (Main + Individual)",
+      key: "finalReport",
+      footnote: "Pending / Add files",
+    },
+  ];
 
 export default function DocumentsPage() {
   const rows = DOC_DEFS.map((d) => {
