@@ -32,7 +32,7 @@ const DOC_DEFS: {
     {
       name: "Final Report",
       key: "finalReport",
-      footnote: "Pending / Add files",
+      footnote: "Available",
     },
   ];
 
