@@ -115,9 +115,7 @@ export default function Home() {
       <div className="mt-10 grid gap-6 md:grid-cols-2">
         <article className="rounded-2xl border border-white/10 bg-zinc-900/50 p-6 shadow-lg backdrop-blur-sm md:p-7">
           <h2 className="text-lg font-semibold text-white">Project Snapshot</h2>
-          <p className="mt-2 text-sm text-zinc-500">
-            High-level framing you can refine as the research matures.
-          </p>
+
           <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-relaxed text-zinc-300">
             <li>Design-time prediction of latency, throughput, and resource usage</li>
             <li>Early anti-pattern detection and architecture refinement support</li>
@@ -126,9 +124,7 @@ export default function Home() {
         </article>
         <article className="rounded-2xl border border-white/10 bg-zinc-900/50 p-6 shadow-lg backdrop-blur-sm md:p-7">
           <h2 className="text-lg font-semibold text-white">Quick Access</h2>
-          <p className="mt-2 text-sm text-zinc-500">
-            Jump straight to the artifacts assessors ask for first.
-          </p>
+
           <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-relaxed text-zinc-300">
             <li>
               <Link className="font-medium text-emerald-400 hover:underline" to="/domain">
@@ -279,23 +275,6 @@ export default function Home() {
           </div>
         </CardShell>
       </div>
-
-      {/* Bottom CTA */}
-      <section className="mt-12 rounded-2xl border border-emerald-400/30 bg-emerald-950/20 px-6 py-8 text-center sm:px-10">
-        <h2 className="text-lg font-semibold text-white sm:text-xl">
-          Questions for the team?
-        </h2>
-        <p className="mx-auto mt-2 max-w-xl text-sm text-zinc-400">
-          Use the contact page for phone, email, and a copy-paste inquiry
-          template you can tailor before sending.
-        </p>
-        <Link
-          to="/contact"
-          className="mt-5 inline-flex items-center justify-center rounded-full bg-emerald-400 px-6 py-2.5 text-sm font-semibold text-emerald-950 transition hover:bg-emerald-300"
-        >
-          Go to contact
-        </Link>
-      </section>
     </div>
   );
 }

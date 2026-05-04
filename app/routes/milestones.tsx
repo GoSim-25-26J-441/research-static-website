@@ -63,19 +63,7 @@ export default function MilestonesPage() {
       <PageHero
         eyebrow="Assessments & progress"
         title="Assessment milestones"
-        lead={
-          <>
-            <p>
-              Expand each item for date, allocated marks, and a short narrative.
-              Replace <span className="font-mono text-zinc-400">XX%</span> and
-              placeholder dates when the timetable is confirmed.
-            </p>
-            <p className="mt-3 text-zinc-500">
-              Use these milestone cards as the dropdown-style menu—same structure
-              as the original HTML site.
-            </p>
-          </>
-        }
+
         footer={
           <Link
             to="/documents"
@@ -86,8 +74,8 @@ export default function MilestonesPage() {
         }
       />
 
-      <div className="grid gap-8 lg:grid-cols-[1fr_280px]">
-        <section className="rounded-2xl border border-white/10 bg-zinc-900/50 p-6 shadow-xl backdrop-blur-sm sm:p-8">
+      <div className="flex justify-center">
+        <section className="w-full max-w-3xl rounded-2xl border border-white/10 bg-zinc-900/50 p-6 shadow-xl backdrop-blur-sm sm:p-8">
           <h2 className="sr-only">Milestone list</h2>
           <div className="space-y-3">
             {MILESTONES.map((m) => (
@@ -121,35 +109,8 @@ export default function MilestonesPage() {
           </div>
         </section>
 
-        <aside className="space-y-6">
-          <div className="rounded-2xl border border-white/10 bg-zinc-900/40 p-5">
-            <h3 className="text-sm font-semibold text-white">Before each review</h3>
-            <ul className="mt-3 space-y-2 text-xs leading-relaxed text-zinc-400">
-              <li>Freeze a tag in Git and note the hash in your slides.</li>
-              <li>Export diagrams or metrics as images for offline demo.</li>
-              <li>Align demo script with objectives on the Domain page.</li>
-            </ul>
-          </div>
-          <div className="rounded-2xl border border-white/10 bg-zinc-900/40 p-5">
-            <h3 className="text-sm font-semibold text-white">Artifacts</h3>
-            <p className="mt-2 text-xs leading-relaxed text-zinc-400">
-              Slide decks are linked from{" "}
-              <Link to="/presentations" className="text-emerald-400 hover:underline">
-                Presentations
-              </Link>{" "}
-              page.
-            </p>
-          </div>
-        </aside>
       </div>
 
-      <p className="mt-10 text-center text-xs text-zinc-500">
-        Need the team roster? See{" "}
-        <Link to="/about" className="text-emerald-400 hover:underline">
-          About us
-        </Link>
-        .
-      </p>
     </div>
   );
 }

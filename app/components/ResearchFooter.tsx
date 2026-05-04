@@ -9,9 +9,7 @@ export function ResearchFooter() {
     <footer className="relative z-10 bg-[#111827] text-white">
       <div className="border-b-2 border-white">
         <div className="mx-auto flex max-w-7xl items-center justify-center gap-4 px-4 py-4 sm:px-6 md:justify-end lg:px-8">
-          <p className="text-center text-sm font-medium text-white/95">
-            Structured research documentation and team showcase.
-          </p>
+
         </div>
       </div>
 
@@ -90,9 +88,7 @@ export function ResearchFooter() {
         <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-3 text-xs text-gray-500 md:flex-row md:items-center md:justify-between">
             <span>© {year} Research Group. All rights reserved.</span>
-            <span className="text-gray-600">
-              Static site — content migrated from the HTML research project site.
-            </span>
+
             <nav className="flex flex-wrap gap-4">
               <Link
                 to="/contact"

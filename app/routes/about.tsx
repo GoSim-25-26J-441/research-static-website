@@ -52,19 +52,7 @@ export default function AboutPage() {
       <PageHero
         eyebrow="People behind the project"
         title="About us"
-        lead={
-          <>
-            <p>
-              Official roster and contact emails for the research group. Photos
-              load from{" "}
-              <code className="rounded bg-zinc-800 px-1.5 py-0.5 text-sm text-zinc-200">
-                public/assets/images/members/
-              </code>{" "}
-              using the same filenames as the original HTML site.
-            </p>
 
-          </>
-        }
         footer={
           <Link
             to="/contact"
@@ -119,17 +107,10 @@ export default function AboutPage() {
 
       <section className="mt-10 rounded-2xl border border-white/10 bg-zinc-900/50 p-6 shadow-lg backdrop-blur-sm sm:p-8">
         <h2 className="text-lg font-semibold text-white">Achievements / highlights</h2>
-        <p className="mt-2 text-sm text-zinc-500">
-          Turn this into a living list as you ship milestones and collect evidence.
-        </p>
+
         <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-zinc-300">
-          <li>Add research or competition achievements.</li>
-          <li>Add publication or prototype milestones.</li>
+          <li>Applicant for the SLCCOM and MARON Conferences</li>
         </ul>
-        <div className="mt-6 rounded-xl border border-emerald-400/20 bg-emerald-950/15 p-4 text-xs leading-relaxed text-zinc-400">
-          Tip: link each bullet to a document or slide when you have something
-          public—readers jump straight to proof.
-        </div>
       </section>
 
       <p className="mt-10 text-center text-sm text-zinc-500">

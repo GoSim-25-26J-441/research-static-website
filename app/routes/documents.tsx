@@ -30,7 +30,7 @@ const DOC_DEFS: {
       footnote: "Available",
     },
     {
-      name: "Final Report (Main + Individual)",
+      name: "Final Report",
       key: "finalReport",
       footnote: "Pending / Add files",
     },
@@ -47,13 +47,7 @@ export default function DocumentsPage() {
       <PageHero
         eyebrow="Evidence & write-ups"
         title="Project documents"
-        lead={
-          <p>
-            Keep this page as a single index of project documents: status and an
-            external link where each file is published. Update rows as charters,
-            proposals, and reports are finalized.
-          </p>
-        }
+
         footer={
           <Link
             to="/presentations"
@@ -96,24 +90,7 @@ export default function DocumentsPage() {
         </div>
       </section>
 
-      <div className="mt-10 grid gap-6 md:grid-cols-2">
-        <section className="rounded-2xl border border-white/10 bg-zinc-900/40 p-6">
-          <h3 className="text-sm font-semibold text-white">Naming convention</h3>
-          <p className="mt-2 text-xs leading-relaxed text-zinc-400">
-            Use clear, versioned filenames (e.g.{" "}
-            <code className="text-zinc-300">proposal-v2.pdf</code>) and avoid spaces
-            in URLs so links stay stable wherever you host them.
-          </p>
-        </section>
-        <section className="rounded-2xl border border-white/10 bg-zinc-900/40 p-6">
-          <h3 className="text-sm font-semibold text-white">Keeping the register current</h3>
-          <ol className="mt-2 list-decimal space-y-1.5 pl-4 text-xs leading-relaxed text-zinc-400">
-            <li>Publish the file wherever your team stores canonical copies.</li>
-            <li>Update the link for that row when the file is ready for assessors.</li>
-            <li>Refresh status text so the table always matches reality.</li>
-          </ol>
-        </section>
-      </div>
+
 
       <p className="mt-10 text-center text-sm text-zinc-500">
         <Link to="/milestones" className="text-emerald-400 hover:underline">

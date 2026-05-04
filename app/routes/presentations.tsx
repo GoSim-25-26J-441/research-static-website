@@ -6,7 +6,7 @@ import { driveSlideUrl, type SlideDriveKey } from "~/lib/driveLinks";
 
 import type { Route } from "./+types/presentations";
 
-export function meta({}: Route.MetaArgs) {
+export function meta({ }: Route.MetaArgs) {
   return [
     { title: "Research Project Website | Presentations" },
     {
@@ -46,13 +46,7 @@ export default function PresentationsPage() {
       <PageHero
         eyebrow="Slides & demos"
         title="Presentation slides"
-        lead={
-          <p>
-            Slide decks for each assessment checkpoint. When a deck is ready,
-            use <span className="text-zinc-400">Open</span> to view it in a new tab.
-            Add or swap rows as your timeline evolves.
-          </p>
-        }
+
         footer={
           <Link
             to="/documents"
@@ -82,28 +76,6 @@ export default function PresentationsPage() {
           );
         })}
       </div>
-
-      <section className="mt-12 rounded-2xl border border-white/10 bg-zinc-900/40 p-6 sm:p-8">
-        <h3 className="text-sm font-semibold text-white">Speaker checklist</h3>
-        <ul className="mt-3 space-y-2 text-sm text-zinc-400">
-          <li className="flex gap-2">
-            <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-emerald-400/80" />
-            One slide that maps objectives → what was built → evidence.
-          </li>
-          <li className="flex gap-2">
-            <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-emerald-400/80" />
-            Backup offline recording or screenshots if live demo can fail.
-          </li>
-          <li className="flex gap-2">
-            <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-emerald-400/80" />
-            Align narrative with the{" "}
-            <Link to="/domain" className="text-emerald-400 hover:underline">
-              Domain
-            </Link>{" "}
-            page so terminology matches.
-          </li>
-        </ul>
-      </section>
 
       <p className="mt-10 text-center text-sm text-zinc-500">
         <Link to="/milestones" className="text-emerald-400 hover:underline">

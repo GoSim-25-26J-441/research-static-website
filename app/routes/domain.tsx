@@ -42,17 +42,7 @@ export default function DomainPage() {
       <PageHero
         eyebrow="Research foundation"
         title="Domain & research context"
-        lead={
-          <>
-            <p>
-              This page mirrors the original HTML site: six blocks you can fill
-              as literature reviews complete and your problem statement stabilizes.
-              Keep language concrete—assessors should see traceability from gap →
-              objectives → methodology.
-            </p>
 
-          </>
-        }
         footer={
           <>
             <Link
@@ -120,36 +110,7 @@ export default function DomainPage() {
         </Card>
       </div>
 
-      <section className="mt-12 rounded-2xl border border-emerald-400/25 bg-emerald-950/15 p-6 sm:p-8">
-        <h2 className="text-lg font-semibold text-white">Traceability checklist</h2>
-        <ul className="mt-4 space-y-2.5 text-sm text-zinc-300">
-          <li className="flex gap-2">
-            <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-emerald-400/80" />
-            Each objective should tie back to the gap and forward to a milestone
-            or deliverable.
-          </li>
-          <li className="flex gap-2">
-            <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-emerald-400/80" />
-            Methodology should name how you will know the solution succeeded.
-          </li>
-          <li className="flex gap-2">
-            <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-emerald-400/80" />
-            Technologies should appear again in documents or repo README when
-            frozen.
-          </li>
-        </ul>
-        <p className="mt-6 text-sm text-zinc-500">
-          Back to{" "}
-          <Link to="/" className="font-medium text-emerald-400 hover:underline">
-            Home
-          </Link>{" "}
-          or continue to{" "}
-          <Link to="/presentations" className="font-medium text-emerald-400 hover:underline">
-            Presentations
-          </Link>
-          .
-        </p>
-      </section>
+
     </div>
   );
 }
