@@ -29,11 +29,6 @@ const DOC_DEFS: {
       key: "checklists",
       footnote: "Available",
     },
-    {
-      name: "Research Paper",
-      key: "finalReport",
-      footnote: "Available",
-    },
   ];
 
 const CHECKLIST_LINKS = [
@@ -51,11 +46,35 @@ const CHECKLIST_LINKS = [
   },
 ] as const;
 
+const THESIS_COMPONENT_LINKS: { label: string; key: DocumentDriveKey }[] = [
+  { label: "Component 1", key: "thesisComponent1" },
+  { label: "Component 2", key: "thesisComponent2" },
+  { label: "Component 3", key: "thesisComponent3" },
+  { label: "Component 4", key: "thesisComponent4" },
+  { label: "Final", key: "thesisFinalComponent" },
+];
+
+const PROPOSAL_COMPONENT_LINKS: { label: string; key: DocumentDriveKey }[] = [
+  { label: "Component 1", key: "component1Proposal" },
+  { label: "Component 2", key: "component2Proposal" },
+  { label: "Component 3", key: "component3Proposal" },
+  { label: "Component 4", key: "component4Proposal" },
+];
+
 export default function DocumentsPage() {
   const rows = DOC_DEFS.map((d) => {
     const href = driveDocUrl(d.key);
     return { ...d, href };
   });
+  const thesisLinks = THESIS_COMPONENT_LINKS.map((link) => ({
+    ...link,
+    href: driveDocUrl(link.key),
+  })).filter((link) => link.href);
+  const proposalLinks = PROPOSAL_COMPONENT_LINKS.map((link) => ({
+    ...link,
+    href: driveDocUrl(link.key),
+  })).filter((link) => link.href);
+  const researchPaperHref = driveDocUrl("finalReport");
 
   return (
     <div className="mx-auto max-w-5xl px-4 pb-16 sm:px-6 lg:px-8">
@@ -117,6 +136,63 @@ export default function DocumentsPage() {
                   </td>
                 </tr>
               ))}
+              <tr className="bg-zinc-900/30">
+                <td className="px-4 py-3 font-medium text-zinc-100">
+                  Thesis Components
+                </td>
+                <td className="px-4 py-3 align-middle">
+                  <p className="max-w-56 text-sm text-zinc-400">Available</p>
+                </td>
+                <td className="px-4 py-3 align-middle">
+                  <div className="flex flex-wrap gap-2">
+                    {thesisLinks.map((link) => (
+                      <a
+                        key={link.label}
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-semibold text-zinc-200 transition hover:border-emerald-400/50 hover:bg-emerald-500/15 hover:text-emerald-200"
+                      >
+                        {link.label}
+                      </a>
+                    ))}
+                  </div>
+                </td>
+              </tr>
+              <tr className="bg-zinc-900/30">
+                <td className="px-4 py-3 font-medium text-zinc-100">
+                  Component Proposals
+                </td>
+                <td className="px-4 py-3 align-middle">
+                  <p className="max-w-56 text-sm text-zinc-400">Available</p>
+                </td>
+                <td className="px-4 py-3 align-middle">
+                  <div className="flex flex-wrap gap-2">
+                    {proposalLinks.map((link) => (
+                      <a
+                        key={link.label}
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-semibold text-zinc-200 transition hover:border-emerald-400/50 hover:bg-emerald-500/15 hover:text-emerald-200"
+                      >
+                        {link.label}
+                      </a>
+                    ))}
+                  </div>
+                </td>
+              </tr>
+              <tr className="bg-zinc-900/30">
+                <td className="px-4 py-3 font-medium text-zinc-100">
+                  Research Paper
+                </td>
+                <td className="px-4 py-3 align-middle">
+                  <p className="max-w-56 text-sm text-zinc-400">Available</p>
+                </td>
+                <td className="px-4 py-3 align-middle">
+                  <OpenButton href={researchPaperHref} />
+                </td>
+              </tr>
             </tbody>
           </table>
         </div>
