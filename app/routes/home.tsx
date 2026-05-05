@@ -48,9 +48,9 @@ const EXPLORE_LINKS = [
 
 const GLANCE = [
   { label: "Institution", value: "SLIIT — final-year research" },
-  { label: "Focus", value: "Pre-deployment microservice performance prediction" },
-  { label: "Site role", value: "Single hub for assessors & visitors" },
-  { label: "Status", value: "In progress — iterative validation each sprint" },
+  { label: "Focus", value: "GO-BASED SIMULATION FOR MICROSERVICES PERFORMANCE PREDICTION" },
+  { label: "Site role", value: "Central showcase for project progress and evidence" },
+  { label: "Status", value: "Completed — final evaluation submitted" },
 ] as const;
 
 const DELIVERABLES = [
@@ -89,7 +89,7 @@ export default function Home() {
           Welcome
         </h1>
         <p className="mt-5 max-w-3xl text-sm leading-relaxed text-zinc-200 sm:text-base">
-          This website presents our final-year research project, "Pre-Deployment Decision Support Framework For Microservice Performance Prediction", including domain context, milestones, documents, presentations, and team details.
+          This website presents our final-year research project, "GO-BASED SIMULATION FOR MICROSERVICES PERFORMANCE PREDICTION", including domain context, milestones, documents, presentations, and team details.
           <br />
           <br />
           The project provides a pre-deployment workflow to process design inputs, generate architecture models, detect anti-patterns, simulate runtime behavior, and compare multi-cloud costs before implementation.

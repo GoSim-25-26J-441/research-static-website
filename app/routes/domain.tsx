@@ -66,8 +66,41 @@ export default function DomainPage() {
           title="Literature Survey"
         >
           <p>
-            Recent studies show strong progress in separate areas of microservice engineering: AI-assisted architecture design, anti-pattern detection, simulation-based performance prediction, and cloud cost-aware deployment planning. Prior work confirms that each area can improve design quality, but most solutions focus on one concern at a time rather than supporting a continuous pre-deployment decision process.
+            Recent studies show strong progress in separate areas of microservice engineering: AI-assisted architecture design[1], anti-pattern detection[2][3], simulation-based performance prediction,[4] and cloud cost-aware deployment planning[5]. Prior work confirms that each area can improve design quality, but most solutions focus on one concern at a time rather than supporting a continuous pre-deployment decision process.
           </p>
+          <h3 className="mt-4 text-sm font-semibold text-zinc-100">References</h3>
+          <ol className="mt-2 list-decimal space-y-1.5 pl-5 text-xs leading-relaxed text-zinc-400">
+            <li>
+              M. Söylemez, B. Tekinerdogan, and A. Kolukısa Tarhan, "Challenges and
+              Solution Directions of Microservice Architectures: A Systematic
+              Literature Review," <em>Applied Sciences</em>, vol. 12, no. 11, Art. no. 5507,
+              2022.
+            </li>
+            <li>
+              D. Narváez, N. Battaglia, A. Fernández, and G. Rossi, "Designing
+              Microservices Using AI: A Systematic Literature Review," <em>Software</em>, vol.
+              4, no. 1, Art. no. 6, 2025.
+            </li>
+            <li>
+              A. Koenig, B. Allaert, and E. Renaux, "NEURAL-UML: Intelligent
+              Recognition System of Structural Elements in UML Class Diagram," in
+              <em>Proc. ACM/IEEE Int. Conf. Model Driven Engineering Languages and
+                Systems Companion (MODELS-C)</em>, 2023, pp. 605-613.
+            </li>
+            <li>
+              T. Hübener, M. R. V. Chaudron, Y. Luo, P. Vallen, J. van der Kogel, and
+              T. Liefheid, "Automatic Anti-Pattern Detection in Microservice
+              Architectures Based on Distributed Tracing," in <em>Proc. IEEE/ACM 44th
+                Int. Conf. Software Engineering: Software Engineering in Practice
+                (ICSE-SEIP)</em>, 2022, pp. 75-76.
+            </li>
+            <li>
+              H. Farsi, D. Allaki, A. En-Nouaary, and M. Dahchour, "A Graph-based
+              Solution to Deal with Cyclic Dependencies in Microservices
+              Architecture," in <em>Proc. 9th Int. Conf. Future Internet of Things and Cloud
+                (FiCloud)</em>, 2022.
+            </li>
+          </ol>
         </Card>
         <Card
           title="Research Gap"

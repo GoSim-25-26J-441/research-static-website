@@ -22,7 +22,12 @@ export function ResearchFooter() {
             <p className="mb-4 w-full max-w-md text-justify text-xs font-thin leading-relaxed text-white/80 md:w-[90%]">
               This site presents our research project: domain knowledge,
               milestones, documents, presentations, and team information—in line
-              with the GO-SIM / ArcFind marketing visual language.
+              with the ArcFind marketing visual language.
+            </p>
+            <p className="text-sm mb-5">
+              Find us on <a href="https://arcfind.dev/" className="text-emerald-400 hover:underline">
+                arcfind.dev
+              </a>
             </p>
             <p className="text-xs font-semibold leading-relaxed text-white/90">
               Final-year research project at SLIIT.
