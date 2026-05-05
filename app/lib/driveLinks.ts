@@ -19,16 +19,21 @@ const fallback = {
 } as const;
 
 function envStr(key: string): string {
-  const raw = (import.meta.env as Record<string, string | boolean | undefined>)[key];
+  const raw = (import.meta.env as Record<string, string | boolean | undefined>)[
+    key
+  ];
   return typeof raw === "string" ? raw.trim() : "";
 }
 
 export const driveLinks = {
   documents: {
-    projectCharter: envStr("VITE_DRIVE_CHARTER") || fallback.documents.projectCharter,
+    projectCharter:
+      envStr("VITE_DRIVE_CHARTER") || fallback.documents.projectCharter,
     proposal: envStr("VITE_DRIVE_PROPOSAL") || fallback.documents.proposal,
-    checklists: envStr("VITE_DRIVE_CHECKLISTS") || fallback.documents.checklists,
-    finalReport: envStr("VITE_DRIVE_FINAL_REPORT") || fallback.documents.finalReport,
+    checklists:
+      envStr("VITE_DRIVE_CHECKLISTS") || fallback.documents.checklists,
+    finalReport:
+      envStr("VITE_DRIVE_FINAL_REPORT") || fallback.documents.finalReport,
   },
   slides: {
     proposal: envStr("VITE_DRIVE_SLIDES_PROPOSAL") || fallback.slides.proposal,

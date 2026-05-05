@@ -25,16 +25,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Reach the group"
         title="Contact us"
-        lead={
-          <>
-            <p>
-              Use the channels below for sponsors, assessors, or collaborators.
-              Prefer email for anything that needs a paper trail; include context
-              so the right member can reply.
-            </p>
 
-          </>
-        }
         footer={
           <Link
             to="/about"
@@ -76,6 +67,19 @@ export default function ContactPage() {
               </dd>
             </div>
           </dl>
+
+          <div className="mt-8 rounded-xl border border-white/10 bg-zinc-950/40 p-4">
+            <h3 className="text-sm font-semibold text-white">Send email</h3>
+            <p className="mt-2 text-sm text-zinc-400">
+              Use this quick link to send your inquiry directly to the team lead.
+            </p>
+            <a
+              href={`mailto:${PRIMARY_EMAIL}`}
+              className="mt-4 inline-flex rounded-full bg-emerald-400 px-4 py-2 text-sm font-semibold text-emerald-950 transition hover:bg-emerald-300"
+            >
+              Send email to {PRIMARY_EMAIL}
+            </a>
+          </div>
         </section>
 
 

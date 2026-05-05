@@ -12,7 +12,7 @@ export function meta({ }: Route.MetaArgs) {
     {
       name: "description",
       content:
-        "Project charter, proposal, checklists, and final report with status and links.",
+        "Project charter, proposal, checklists, and research paper with status and links.",
     },
   ];
 }
@@ -30,7 +30,7 @@ const DOC_DEFS: {
       footnote: "Available",
     },
     {
-      name: "Final Report",
+      name: "Research Paper",
       key: "finalReport",
       footnote: "Available",
     },
