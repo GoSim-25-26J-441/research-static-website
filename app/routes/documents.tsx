@@ -36,6 +36,21 @@ const DOC_DEFS: {
     },
   ];
 
+const CHECKLIST_LINKS = [
+  {
+    label: "Checklist 1",
+    href: "https://drive.google.com/file/d/1FTaEZoTQNHtwKm1aZKmOLyqwZo7OxuX9/view?usp=drive_link",
+  },
+  {
+    label: "Checklist 2",
+    href: "https://drive.google.com/file/d/1phCteSDLoXgZEAx4hIKOk9nWOay537rr/view?usp=drive_link",
+  },
+  {
+    label: "Checklist 3",
+    href: "https://drive.google.com/file/d/17D0SJXvGOcrHc4fhMMUKY0HU7aX-G9ep/view?usp=drive_link",
+  },
+] as const;
+
 export default function DocumentsPage() {
   const rows = DOC_DEFS.map((d) => {
     const href = driveDocUrl(d.key);
@@ -81,7 +96,24 @@ export default function DocumentsPage() {
                     <p className="max-w-56 text-sm text-zinc-400">{r.footnote}</p>
                   </td>
                   <td className="px-4 py-3 align-middle">
-                    <OpenButton href={r.href} />
+                    <div className="flex flex-col items-start gap-2">
+                      {r.key !== "checklists" ? <OpenButton href={r.href} /> : null}
+                      {r.key === "checklists" ? (
+                        <div className="flex flex-wrap gap-2">
+                          {CHECKLIST_LINKS.map((link) => (
+                            <a
+                              key={link.label}
+                              href={link.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-semibold text-zinc-200 transition hover:border-emerald-400/50 hover:bg-emerald-500/15 hover:text-emerald-200"
+                            >
+                              {link.label}
+                            </a>
+                          ))}
+                        </div>
+                      ) : null}
+                    </div>
                   </td>
                 </tr>
               ))}
